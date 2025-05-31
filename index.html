@@ -291,6 +291,7 @@
             flex-direction: column;
             gap: 1rem;
             align-items: center;
+            justify-content: center;
         }
 
         .btn {
@@ -543,29 +544,6 @@
             color: var(--color-text-muted);
             font-size: 1.125rem;
             line-height: 1.7;
-            margin-bottom: 1.5rem;
-        }
-
-        .team-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-        }
-
-        .team-link {
-            color: var(--color-text-muted);
-            transition: all 0.3s ease;
-            text-decoration: none;
-            font-weight: 600;
-            padding: 0.5rem 1rem;
-            border: 1px solid var(--color-text-muted);
-            border-radius: 0.5rem;
-        }
-
-        .team-link:hover {
-            color: var(--color-primary);
-            border-color: var(--color-primary);
-            transform: scale(1.1);
         }
 
         /* Project Cards */
@@ -690,7 +668,71 @@
             color: var(--color-text);
         }
 
-        /* Service Cards */
+        /* Testimonials Section */
+        .testimonial-card {
+            background: linear-gradient(135deg, rgba(13, 20, 33, 0.8), rgba(8, 17, 29, 0.8));
+            border-radius: 2rem;
+            padding: 3rem;
+            border: 1px solid rgba(78, 205, 196, 0.3);
+            transition: all 0.5s ease;
+            backdrop-filter: blur(20px);
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .testimonial-card:hover {
+            border-color: var(--color-secondary);
+            transform: translateY(-5px);
+        }
+
+        .testimonial-quote {
+            font-size: 1.25rem;
+            line-height: 1.8;
+            color: var(--color-text);
+            font-style: italic;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .testimonial-quote::before {
+            content: '"';
+            font-size: 4rem;
+            color: var(--color-primary);
+            position: absolute;
+            left: -2rem;
+            top: -1rem;
+            font-family: serif;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .testimonial-project {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(45deg, var(--color-primary), var(--color-secondary));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            color: var(--color-bg);
+            flex-shrink: 0;
+        }
+
+        .testimonial-info h4 {
+            color: var(--color-text);
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        .testimonial-info p {
+            color: var(--color-text-muted);
+            font-size: 0.875rem;
+        }
         .service-card {
             text-align: center;
             padding: 2rem;
@@ -780,6 +822,7 @@
             flex-direction: column;
             gap: 1.5rem;
             align-items: center;
+            justify-content: center;
             margin-bottom: 4rem;
         }
 
@@ -791,29 +834,6 @@
         .contact-email {
             font-size: 1.25rem;
             font-family: 'Courier New', monospace;
-            margin-bottom: 1rem;
-        }
-
-        .contact-social {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-        }
-
-        .social-link {
-            color: var(--color-text-muted);
-            transition: all 0.3s ease;
-            text-decoration: none;
-            font-weight: 600;
-            padding: 0.75rem 1.5rem;
-            border: 1px solid var(--color-text-muted);
-            border-radius: 0.5rem;
-        }
-
-        .social-link:hover {
-            color: var(--color-primary);
-            border-color: var(--color-primary);
-            transform: scale(1.1);
         }
 
         /* Footer */
@@ -867,10 +887,12 @@
         @media (min-width: 640px) {
             .hero-buttons {
                 flex-direction: row;
+                justify-content: center;
             }
 
             .contact-buttons {
                 flex-direction: row;
+                justify-content: center;
             }
 
             .footer-content {
@@ -933,6 +955,7 @@
                 <a href="#concept" class="nav-link">Concept</a>
                 <a href="#equipe" class="nav-link">Équipe</a>
                 <a href="#projets" class="nav-link">Projets</a>
+                <a href="#temoignages" class="nav-link">Témoignages</a>
                 <a href="#services" class="nav-link">Services</a>
                 <a href="#contact" class="nav-link">Contact</a>
             </nav>
@@ -952,6 +975,7 @@
             <a href="#concept" class="mobile-nav-link">Concept</a>
             <a href="#equipe" class="mobile-nav-link">Équipe</a>
             <a href="#projets" class="mobile-nav-link">Projets</a>
+            <a href="#temoignages" class="mobile-nav-link">Témoignages</a>
             <a href="#services" class="mobile-nav-link">Services</a>
             <a href="#contact" class="mobile-nav-link">Contact</a>
         </div>
@@ -1050,10 +1074,6 @@
                     <p class="team-description">
                         Experte en stratégie marketing digital et développement de marque
                     </p>
-                    <div class="team-links">
-                        <a href="#" class="team-link">LinkedIn</a>
-                        <a href="#" class="team-link">Portfolio</a>
-                    </div>
                 </div>
                 
                 <div class="team-card">
@@ -1063,10 +1083,6 @@
                     <p class="team-description">
                         Spécialiste en développement produit et partenariats stratégiques
                     </p>
-                    <div class="team-links">
-                        <a href="#" class="team-link">LinkedIn</a>
-                        <a href="#" class="team-link">Portfolio</a>
-                    </div>
                 </div>
                 
                 <div class="team-card">
@@ -1076,10 +1092,6 @@
                     <p class="team-description">
                         Expert juridique spécialisé en droit des nouvelles technologies et propriété intellectuelle
                     </p>
-                    <div class="team-links">
-                        <a href="#" class="team-link">LinkedIn</a>
-                        <a href="#" class="team-link">Portfolio</a>
-                    </div>
                 </div>
             </div>
         </div>
@@ -1104,20 +1116,20 @@
                         <div class="project-number">01</div>
                         <div class="project-info">
                             <div class="project-title-row">
-                                <h3 class="project-title">Dashboard Analytics Pro</h3>
+                                <h3 class="project-title">MDMC Music Ads</h3>
                                 <span class="project-status status-live">En production</span>
                             </div>
                             <p class="project-description">
-                                Plateforme de business intelligence avec visualisations temps réel et système d'alertes avancé
+                                Plateforme de promotion musicale avec système d'annonces ciblées et analytics avancés pour artistes
                             </p>
                             <div class="project-tech">
                                 <span class="tech-tag">React</span>
-                                <span class="tech-tag">D3.js</span>
-                                <span class="tech-tag">Framer Motion</span>
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">MongoDB</span>
                             </div>
                         </div>
                     </div>
-                    <a href="#" class="project-link">Voir le projet →</a>
+                    <a href="https://www.mdmcmusicads.com" target="_blank" class="project-link">Voir le projet →</a>
                 </div>
                 
                 <div class="project-card">
@@ -1125,20 +1137,20 @@
                         <div class="project-number">02</div>
                         <div class="project-info">
                             <div class="project-title-row">
-                                <h3 class="project-title">Brand Experience Platform</h3>
-                                <span class="project-status status-dev">En développement</span>
+                                <h3 class="project-title">Adam Denis Portfolio</h3>
+                                <span class="project-status status-live">En production</span>
                             </div>
                             <p class="project-description">
-                                Solution omnicanale pour l'engagement client et la gestion de contenu multimédia
+                                Portfolio créatif avec expériences interactives et animations sur-mesure pour développeur frontend
                             </p>
                             <div class="project-tech">
-                                <span class="tech-tag">Next.js</span>
-                                <span class="tech-tag">Three.js</span>
+                                <span class="tech-tag">Vue.js</span>
                                 <span class="tech-tag">GSAP</span>
+                                <span class="tech-tag">Three.js</span>
                             </div>
                         </div>
                     </div>
-                    <a href="#" class="project-link">Voir le projet →</a>
+                    <a href="https://www.adam-denis.com" target="_blank" class="project-link">Voir le projet →</a>
                 </div>
                 
                 <div class="project-card">
@@ -1150,7 +1162,7 @@
                                 <span class="project-status status-beta">Version Beta</span>
                             </div>
                             <p class="project-description">
-                                Environnement de prototypage rapide pour le test de nouvelles technologies
+                                Environnement de prototypage rapide pour le test de nouvelles technologies et concepts créatifs
                             </p>
                             <div class="project-tech">
                                 <span class="tech-tag">Vite</span>
@@ -1159,7 +1171,50 @@
                             </div>
                         </div>
                     </div>
-                    <a href="#" class="project-link">Voir le projet →</a>
+                    <a href="#contact" class="project-link">Voir le projet →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="temoignages" class="section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-marker team">💬</div>
+                <h2 class="section-title">
+                    Ce que nos <span class="highlight">clients</span> disent
+                </h2>
+                <p class="section-subtitle">
+                    Témoignages de nos partenaires satisfaits
+                </p>
+            </div>
+            
+            <div class="grid grid-3" style="grid-template-columns: 1fr;">
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">
+                        Travailler avec Vibes C# Agency, c'est comme brancher une IA sur une console analogique : ça code, ça groove, et ça délivre. Vibes Agency a parfaitement compris notre vision et su la traduire en un site web élégant, vivant, et terriblement efficace. On sent que chaque ligne de code est pensée comme une punchline.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-project">AD</div>
+                        <div class="testimonial-info">
+                            <h4>Adam Denis</h4>
+                            <p>Développeur Frontend • adam-denis.com</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">
+                        On cherchait un partenaire capable de créer une interface aussi intuitive que percutante, capable de parler à nos artistes et managers. L'équipe Vibes C# a fait bien plus : ils ont transformé notre outil marketing en véritable expérience de marque. Design, UX, performance… tout est maîtrisé. On ne bosse plus qu'avec eux.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="testimonial-project">MM</div>
+                        <div class="testimonial-info">
+                            <h4>MDMC Music</h4>
+                            <p>Plateforme Marketing • mdmcmusicads.com</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1238,10 +1293,6 @@
             
             <div class="contact-info">
                 <p class="contact-email">hello@vibes-agency.com</p>
-                <div class="contact-social">
-                    <a href="#" class="social-link">GitHub</a>
-                    <a href="#" class="social-link">LinkedIn</a>
-                </div>
             </div>
         </div>
     </section>
